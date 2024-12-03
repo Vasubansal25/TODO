@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Management Dashboard</title>
+  <link rel="stylesheet" href="assign.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Task Dashboard</h1>
+      <button id="addTaskBtn">+ Add Task</button>
+    </header>
+
+    <section class="filters">
+      <button data-filter="all" class="filter-btn active">All Tasks</button>
+      <button data-filter="completed" class="filter-btn">Completed</button>
+      <button data-filter="pending" class="filter-btn">Pending</button>
+      <button data-filter="overdue" class="filter-btn">Overdue</button>
+    </section>
+
+    <section id="taskList"></section>
+  </div>
+
+  <!-- Task Modal -->
+  <div id="taskModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <form id="taskForm">
+        <input type="hidden" id="taskId">
+        <label for="title">Title</label>
+        <input type="text" id="title" required>
+        <label for="description">Description</label>
+        <textarea id="description" rows="4" required></textarea>
+        <label for="dueDate">Due Date</label>
+        <input type="date" id="dueDate" required>
+        <button type="submit" id="saveTaskBtn">Save Task</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.1.2/redux.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
